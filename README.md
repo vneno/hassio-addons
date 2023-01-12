@@ -25,4 +25,5 @@ G-Homa smart plugs bridge to MQTT server with auto discovery feature
 Thanks to:
 
 https://github.com/poldy79/ghoma2mqtt
+
 https://github.com/bl0x/ghomapy
