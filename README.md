@@ -1,33 +1,27 @@
-# hydroqc-hass-addons
+# hassio-addons
 
-**The full updated project documentation can be found at [https://hydroqc.ca](https://hydroqc.ca)**
+## About
 
-We have a discord server where you can come to discuss and find help with the project [https://discord.gg/2NrWKC7sfF](https://discord.gg/2NrWKC7sfF)
+Hass.io allows anyone to create add-on repositories to share their add-ons for
+Hass.io easily. This repository is one of those repositories.
 
-HASS addon code for Hydro Quebec API Wrapper and hydroqc2mqtt integration
 
-Supported Arch:
-![Supports aarch64 Architecture][aarch64-shield]
-![Supports amd64 Architecture][amd64-shield]
-![Supports armhf Architecture][armhf-shield]
-![Supports armv7 Architecture][armv7-shield]
-![Supports i386 Architecture][i386-shield]
+## Installation
 
-Work in progress, please report any issue.
+Adding this add-ons repository to your Hass.io Home Assistant instance is
+pretty easy. Follow https://home-assistant.io/hassio/installing_third_party_addons/ on the
+website of Home Assistant, and use the following URL:
 
-# Install
+```
+https://github.com/vneno/hassio-addons/
+```
 
-Option 1: click this button:
-[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgitlab.com%2Fhydroqc%2Fhydroqc-hass-addons)
+## Add-ons provided by this repository
 
-Option 2: Go in the supervisor page -> Add-on Store -> click on the vertical "..." on the top right of the page, add this repository: https://gitlab.com/hydroqc/hydroqc-hass-addons.git
+### [ghoma2mqtt]
 
-Once completed, go into the hydroqc addon and click install.
+Thanks to:
 
-Let us know if you like the project or if you have bugs, suggestions, ideas.
+https://github.com/poldy79/ghoma2mqtt
 
-[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+https://github.com/bl0x/ghomapy
