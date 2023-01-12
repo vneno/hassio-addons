@@ -27,4 +27,5 @@ https://github.com/vneno/hassio-addons/
 ### Thanks to:
 
 https://github.com/poldy79/ghoma2mqtt
+
 https://github.com/bl0x/ghomapy
