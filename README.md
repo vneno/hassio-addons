@@ -19,6 +19,9 @@ https://github.com/vneno/hassio-addons/
 ## Add-ons provided by this repository
 
 ### [ghoma2mqtt]
+G-Homa smart plugs bridge to MQTT server with auto discovery feature
+
+Readme: https://github.com/vneno/hassio-addons/ghoma2mqtt/README.md
 
 Thanks to:
 
