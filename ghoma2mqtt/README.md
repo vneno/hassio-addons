@@ -4,6 +4,8 @@
 
 G-Homa smart plugs bridge to MQTT server with auto discovery feature
 
+Energy monitoring feature is _NOT_ implemented
+
 Utility to configure your G-Homa plugs: 
 ```
 plug_configure.py
