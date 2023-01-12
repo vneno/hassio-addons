@@ -1,13 +1,18 @@
 #!/bin/bash
 set -e
 
-#CONFIG_PATH=/data/options.json
-#CONNECTION_STRING="$(jq --raw-output '.connectionString' $CONFIG_PATH)"
-#WATCH="$(jq --raw-output '.watch' $CONFIG_PATH)"
+CONFIG_PATH=/data/options.json
 
-#echo Hello!
-#node -v
-#npm -v
+# parse inputs from options
+MQTTHOST=$(jq --raw-output ".MQTTHOST" $CONFIG_PATH)
+MQTTPORT=$(jq --raw-output ".MQTTPORT" $CONFIG_PATH)
+MQTTSSL=$(jq --raw-output ".MQTTSSL" $CONFIG_PATH)
+MQTTUSER=$(jq --raw-output ".MQTTUSER" $CONFIG_PATH)
+MQTTPASS=$(jq --raw-output ".MQTTPASS" $CONFIG_PATH)
+RETAIN=$(jq --raw-output ".RETAIN" $CONFIG_PATH)
+AUTODISCOVERY=$(jq --raw-output ".AUTODISCOVERY" $CONFIG_PATH)
+DISCOVERYTOPIC=$(jq --raw-output ".DISCOVERYTOPIC" $CONFIG_PATH)
+DEBUG=$(jq --raw-output ".DEBUG" $CONFIG_PATH)
 
 echo "---"
 echo "starting ghoma2mqtt"
