@@ -56,7 +56,7 @@ https://github.com/vneno/hassio-addons/
 - MQTTPASS - mqtt_password
 - RETAIN - keep RETAIN if you want retain mqtt msgs or put anything else if you dont
 - AUTODISCOVERY - keep AUTODISCOVERY if you want automatic device discovery or put anything else if you dont
-- homeassistant - keep homeassistant
+- DISCOVERYTOPIC - keep homeassistant
 - DEBUG - keep DEBUG if you want debug messages in Log or put anything else if you dont (i.e. NODEBUG)
 
 
