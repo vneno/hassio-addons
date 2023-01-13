@@ -26,9 +26,9 @@ Example:
 
 G-Homa Plug IP: 10.10.100.254
 
-Your Ghoma2mqtt server (Your HA IP address): 192.168.1.10
+Your HA IP address: 192.168.1.10
 
-Ghoma2mqtt port (use default 4196) - 4196
+Ghoma2mqtt port (use default 4196): 4196
 
 WiFi name: Home-IoT
 
@@ -48,6 +48,16 @@ https://github.com/vneno/hassio-addons/
 ```
 
 ## Configuration
+
+- MQTTHOST - IP address of MQTT server (Your HA/MQTT server IP)
+- MQTTPORT - 8883 (port with SSL support)
+- MQTTSSL - SSL - if you want to use ssl or put anything else if you dont want a ssl connection
+- MQTTUSER - mqtt_username
+- MQTTPASS - mqtt_password
+- RETAIN - keep RETAIN if you want retain mqtt msgs or put anything else if you dont
+- AUTODISCOVERY - keep AUTODISCOVERY if you want automatic device discovery or put anything else if you dont
+- homeassistant - keep homeassistant
+- DEBUG - keep DEBUG if you want debug messages in Log or put anything else if you dont (i.e. NODEBUG)
 
 
 
