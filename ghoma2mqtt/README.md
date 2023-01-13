@@ -21,11 +21,17 @@ Configure the Plug:
 - connect to G-Homa WiFi
 - check the connection i.e. ping (default G-Homa AP IP: 10.10.100.254)
 - run the configure command with params: python3 plug_configure.py plugip ctrlhost ctrlport ssid pskey
+
 Example:
+
 G-Homa Plug IP: 10.10.100.254
+
 Your Ghoma2mqtt server (Your HA IP address): 192.168.1.10
+
 Ghoma2mqtt port (use default 4196) - 4196
+
 WiFi name: Home-IoT
+
 WiFi password: iot-home-gatdgets
 ```
 python3 plug_configure.py 10.10.100.254 172.16.255.50 4196 Home-IoT iot-home-gatdgets
