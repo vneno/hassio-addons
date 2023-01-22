@@ -1,13 +1,11 @@
 {
   "name": "G-Homa MQTT server",
-  "version": "0.2",
+  "version": "0.2.1",
   "slug": "ghoma2mqtt",
   "description": "G-Homa to MQTT server - bridge for G-Homa plugs with autodiscovery support. Only switch - no energy monitoring.",
   "url": "https://github.com/vneno/hassio-addons/tree/main/ghoma2mqtt",
   "startup": "before",
   "boot": "auto",
-  "options": {},
-  "schema": {},
   "ports": {
     "4196/tcp": 4196
   },

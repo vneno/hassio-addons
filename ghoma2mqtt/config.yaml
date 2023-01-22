@@ -1,0 +1,37 @@
+name: G-Homa MQTT server
+version: 0.3.0
+slug: ghoma2mqtt
+description: G-Homa to MQTT server - bridge for G-Homa plugs with autodiscovery support. Only switch - no energy monitoring.
+url: https://github.com/vneno/hassio-addons/tree/main/ghoma2mqtt
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+startup: application
+boot: auto
+services:
+  - mqtt:need
+ports:
+  4196/tcp: 4196
+options:
+  mqtt_host: 127.0.0.1
+  mqtt_port: 8883
+  mqtt_ssl: true
+  mqtt_user: user
+  mqtt_pass: pwd
+  retain: true
+  autodiscovery: true
+  discoverytopit: homeassistant
+  debug: true
+schema:
+  mqtt_host: str?
+  mqtt_port: int?
+  mqtt_ssl: bool? 
+  mqtt_user: str?
+  mqtt_pass: str?
+  retain: bool?
+  autodiscovery: bool?
+  discoverytopic: str?
+  debug: bool?
