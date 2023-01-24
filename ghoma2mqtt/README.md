@@ -49,15 +49,15 @@ https://github.com/vneno/hassio-addons/
 
 ## Configuration
 
-- MQTTHOST - IP address of MQTT server (Your HA/MQTT server IP)
-- MQTTPORT - 8883 (port with SSL support)
-- MQTTSSL - SSL - if you want to use ssl or put anything else if you dont want a ssl connection
-- MQTTUSER - mqtt_username
-- MQTTPASS - mqtt_password
-- RETAIN - keep RETAIN if you want retain mqtt msgs or put anything else if you dont
-- AUTODISCOVERY - keep AUTODISCOVERY if you want automatic device discovery or put anything else if you dont
-- DISCOVERYTOPIC - keep homeassistant
-- DEBUG - keep DEBUG if you want debug messages in Log or put anything else if you dont (i.e. NODEBUG)
+- MQTT_HOST - IP address of MQTT server (Leave empty to use internal mqtt)
+- MQTT_PORT - 1883 (Leave empty to use internal mqtt)
+- MQTT_SSL - if you want to use ssl (Leave empty when using internal mqtt)
+- MQTT_USER - mqtt_username (Leave empty when using internal mqtt)
+- MQTT_PASS - mqtt_password (Leave empty when using internal mqtt)
+- RETAIN - retain MQTT messages
+- AUTODISCOVERY - automatic device discovery in HA
+- DISCOVERYTOPIC - default topic homeassistant
+- DEBUG - debug messages in Log
 
 
 

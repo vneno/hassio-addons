@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 g-homa2mqtt server
 thanks to:  poldy79
@@ -18,7 +18,7 @@ _LOGGER = logging.getLogger("ghoma2mqtt")
 
 MQTTHOST=sys.argv[1] #str IPka
 MQTTPORT=int(sys.argv[2]) #int port
-if sys.argv[3] == "SSL":
+if sys.argv[3] == "true":
     MQTTSSL=True
 else:
     MQTTSSL=False
@@ -26,21 +26,26 @@ else:
 USERNAME=sys.argv[4] #str
 PASSWORD=sys.argv[5] #str
 
-
-if sys.argv[6] == "RETAIN":
+# RETAIN
+if sys.argv[6] == "true":
     RETAIN=True
 else:
     RETAIN=False
 
-if sys.argv[7]== "AUTODISCOVERY":
+# AUTODISCOVERY
+if sys.argv[7]== "true":
     AUTODISCOVERY=True
 else:
     AUTODISCOVERY=False
 
-#DISCOVERYTOPIC="homeassistant" #str
-DISCOVERYTOPIC=sys.argv[8] #str
+# DISCOVERYTOPIC
+if sys.argv[8]=="":
+    DISCOVERYTOPIC="homeassistant"
+else:
+    DISCOVERYTOPIC=sys.argv[8] #str
 
-if sys.argv[9] == "DEBUG":
+# DEBUG
+if sys.argv[9] == "true":
     DEBUG=True
 else:
     DEBUG=False

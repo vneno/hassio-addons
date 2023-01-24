@@ -1,9 +1,6 @@
 #!/usr/bin/env bashio
 set -e
 
-CONFIG_PATH=/data/options.json
-
-
 MQTT_HOST=$(bashio::config 'mqtt_host')
 if [[ -z "$MQTT_HOST" || $MQTT_HOST == "null" ]]; then 
     if ! bashio::services.available "mqtt"; then
@@ -12,29 +9,34 @@ if [[ -z "$MQTT_HOST" || $MQTT_HOST == "null" ]]; then
         bashio::log.info "Internal MQTT service found, fetching configuration ..."
         MQTT_HOST=$(bashio::services mqtt "host")
         MQTT_USER=$(bashio::services mqtt "username")
-        MQTT_PASSWORD=$(bashio::services mqtt "password")
+        MQTT_PASS=$(bashio::services mqtt "password")
+	MQTT_PORT="1883"
+        MQTT_SSL="NOSSL"
 
-        RETAIN=$(jq --raw-output ".retain" $CONFIG_PATH)
-        AUTODISCOVERY=$(jq --raw-output ".autodiscovery" $CONFIG_PATH)
-        DISCOVERYTOPIC=$(jq --raw-output ".discoverytopic" $CONFIG_PATH)
-        DEBUG=$(jq --raw-output ".debug" $CONFIG_PATH)
+	RETAIN=$(bashio::config 'retain')
+	AUTODISCOVERY=$(bashio::config 'autodiscovery')
+        DISCOVERYTOPIC=$(bashio::config 'discoverytopic')
+        DEBUG=$(bashio::config 'debug')
+
 
     fi
 else
     # parse inputs from options
-    MQTTHOST=$(jq --raw-output ".mqtt_host" $CONFIG_PATH)
-    MQTTPORT=$(jq --raw-output ".mqtt_port" $CONFIG_PATH)
-    MQTTSSL=$(jq --raw-output ".mqtt_ssl" $CONFIG_PATH)
-    MQTTUSER=$(jq --raw-output ".mqtt_user" $CONFIG_PATH)
-    MQTTPASS=$(jq --raw-output ".mqtt_pass" $CONFIG_PATH)
-    RETAIN=$(jq --raw-output ".retain" $CONFIG_PATH)
-    AUTODISCOVERY=$(jq --raw-output ".autodiscovery" $CONFIG_PATH)
-    DISCOVERYTOPIC=$(jq --raw-output ".discoverytopic" $CONFIG_PATH)
-    DEBUG=$(jq --raw-output ".debug" $CONFIG_PATH)
+    MQTT_HOST=$(bashio::config 'mqtt_host')
+    MQTT_PORT=$(bashio::config 'mqtt_port')
+    MQTT_SSL=$(bashio::config 'mqtt_ssl')
+    MQTT_USER=$(bashio::config 'mqtt_user')
+    MQTT_PASS=$(bashio::config 'mqtt_pass')
+
+    RETAIN=$(bashio::config 'retain')
+    AUTODISCOVERY=$(bashio::config 'autodiscovery')
+    DISCOVERYTOPIC=$(bashio::config 'discoverytopic')
+    DEBUG=$(bashio::config 'debug')
+
 
 fi
 bashio::log.info "Done."
 
 bashio::log.info "Starting python script..."
-python3 ghoma2mqtt_p3.py $MQTTHOST $MQTTPORT $MQTTSSL $MQTTUSER $MQTTPASS $RETAIN $AUTODISCOVERY $DISCOVERYTOPIC $DEBUG
+python3 ghoma2mqtt_p3.py $MQTT_HOST $MQTT_PORT $MQTT_SSL $MQTT_USER $MQTT_PASS $RETAIN $AUTODISCOVERY $DISCOVERYTOPIC $DEBUG
 bashio::log.info "Done."
