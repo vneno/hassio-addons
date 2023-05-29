@@ -34,7 +34,7 @@ WiFi name: Home-IoT
 
 WiFi password: iot-home-gatdgets
 ```
-python3 plug_configure.py 10.10.100.254 172.16.255.50 4196 Home-IoT iot-home-gatdgets
+python3 plug_configure.py 10.10.100.254 192.168.1.10 4196 Home-IoT iot-home-gatdgets
 ```
 
 ## Installation
